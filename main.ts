@@ -7,6 +7,7 @@ bluetooth.onBluetoothDisconnected(function on_bluetooth_disconnected() {
 bluetooth.onUartDataReceived(serial.delimiters(Delimiters.NewLine), function on_uart_data_received() {
     
     uartCmd = bluetooth.uartReadUntil(serial.delimiters(Delimiters.NewLine))
+    basic.showString(uartCmd)
     if (uartCmd == "f") {
         maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 84)
     } else if (uartCmd == "s") {
