@@ -1,9 +1,9 @@
 def on_bluetooth_connected():
-    basic.show_icon(IconNames.HAPPY)
+    basic.show_icon(IconNames.DIAMOND)
 bluetooth.on_bluetooth_connected(on_bluetooth_connected)
 
 def on_bluetooth_disconnected():
-    basic.show_icon(IconNames.SAD)
+    basic.show_icon(IconNames.NO)
 bluetooth.on_bluetooth_disconnected(on_bluetooth_disconnected)
 
 def on_uart_data_received():
@@ -24,5 +24,4 @@ bluetooth.on_uart_data_received(serial.delimiters(Delimiters.NEW_LINE),
 
 uartCmd = ""
 bluetooth.start_uart_service()
-basic.show_string("Uart On")
-basic.show_icon(IconNames.HEART)
+basic.show_icon(IconNames.YES)

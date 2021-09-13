@@ -1,8 +1,8 @@
 bluetooth.onBluetoothConnected(function on_bluetooth_connected() {
-    basic.showIcon(IconNames.Happy)
+    basic.showIcon(IconNames.Diamond)
 })
 bluetooth.onBluetoothDisconnected(function on_bluetooth_disconnected() {
-    basic.showIcon(IconNames.Sad)
+    basic.showIcon(IconNames.No)
 })
 bluetooth.onUartDataReceived(serial.delimiters(Delimiters.NewLine), function on_uart_data_received() {
     
@@ -22,5 +22,4 @@ bluetooth.onUartDataReceived(serial.delimiters(Delimiters.NewLine), function on_
 })
 let uartCmd = ""
 bluetooth.startUartService()
-basic.showString("Uart On")
-basic.showIcon(IconNames.Heart)
+basic.showIcon(IconNames.Yes)
